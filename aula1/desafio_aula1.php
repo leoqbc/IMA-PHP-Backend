@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Desafio da Aula 01
+ * Desafio da Aula 02
  * Criar variáveis para realizar a troca no código (texto entre [])
  * seguindo o exemplo do nome
  */
@@ -11,7 +11,7 @@ $nomeCliente = 'Um nome aqui';
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
