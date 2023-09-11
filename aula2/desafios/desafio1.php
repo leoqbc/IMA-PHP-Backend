@@ -6,8 +6,21 @@
  * seguindo o exemplo do nome
  */
 
-$nomeCliente = 'Um nome aqui';
+$nomeCliente = 'Aline Farias';
 
+// camelCase ex: palavraMuitoGrandeAqui
+$nomeEmpresa = 'IMA Tech';
+
+$nomeProduto = 'Travesseiro da Nasa';
+
+$precoProduto = number_format(1123.22, 2, ',', '.');
+
+$dataDeEntrega = '20/10/2023';
+
+$cashBack = number_format(3.00, 2, ',', '.');
+
+//snale_case ex: palavra_muito_grande_aqui
+// $snake_case
 ?>
 
 <!DOCTYPE html>
@@ -19,8 +32,8 @@ $nomeCliente = 'Um nome aqui';
 </head>
 <body>
     <h1>Olá <?php echo $nomeCliente; ?></h1>
-    <p>Seja bem vindo ao site: [Nome da empresa]</p>
-    <p>Seu produto [nome do produto] no preço [preço do produto] está sendo preparado e será entrega no dia [data de entrega]</p>
-    <p>Esta compra lhe gerou um cashback de [cash back da compra].
+    <p>Seja bem vindo ao site: <?php echo $nomeEmpresa ?></p>
+    <p>Seu produto <?=$nomeProduto?> no preço <?=$precoProduto?> está sendo preparado e será entrega no dia <?=$dataDeEntrega?></p>
+    <p>Esta compra lhe gerou um cashback de <?=$cashBack?>.
 </body>
 </html>

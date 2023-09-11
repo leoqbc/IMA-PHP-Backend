@@ -1,5 +1,8 @@
 <?php
 
+// localhost = 127.0.0.1
+// ip local = 127.0.0.1
+
 $nomeCliente = 'Ana Paula';
 
 ?>
@@ -11,7 +14,9 @@ $nomeCliente = 'Ana Paula';
     <title>PHP com HTML</title>
 </head>
 <body>
-    <h1>Olá <?php echo $nomeCliente; ?></h1>
+    <h1>Olá <span style="color: purple"><?php echo $nomeCliente; ?></span></h1>
     <h2>Esta é uma pagina que está sendo processada pelo PHP</h2>
+    <?php echo "<h3>um bloco de HTML aqui!</h3>"; ?>
+    <?php echo "<script>alert('javascript dentro do PHP');</script>"; ?>
 </body>
 </html>
