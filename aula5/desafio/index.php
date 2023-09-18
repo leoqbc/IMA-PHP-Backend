@@ -5,7 +5,7 @@
     1. Nome
     2. Email
     3. Telefone
-    4. Genero
+    4. Genero (radiobox ou select)
 
     Criar um arquivo chamado exibe_cliente.php ao confirmar o cadastro você deve redirecionar a pessoa para a página
     e exibir seu dados.
