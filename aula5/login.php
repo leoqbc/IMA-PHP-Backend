@@ -2,7 +2,7 @@
 
 // Validação
 // mb_strlen -> mb = multibyte strlen = string length
-if ( strlen($_POST['email']) > 100 ) {
+if ( strlen($_POST['email']) > 30 ) {
     exit('Email inválido');
 }
 
