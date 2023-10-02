@@ -1,0 +1,11 @@
+ -- View ficam na pasta resources/views
+
+ -- Rotas ficam em routes/web.php
+
+ -- Controllers ficam em app/Http/Controllers/ProdutosController.php
+
+ -- Criar um controller rode o comando php artisan make:controller NomeController
+
+ -- Criar view: php artisan make:view nomeDaView (nomeDaView.blade.php)
+
+ -- Router rotas: /minha/rota/{var1}/{var2}
