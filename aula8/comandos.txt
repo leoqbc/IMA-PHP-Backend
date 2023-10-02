@@ -1,0 +1,13 @@
+- Instala o projeto Laravel completo
+composer create-project laravel/laravel nome_do_projeto
+
+- Entrar na pasta do projeto
+cd nome_do_projeto
+
+- Comando base do Laravel
+php artisan
+
+- Rodar o servidor Web
+php artisan serve
+
+- Acessar localhost:8000
