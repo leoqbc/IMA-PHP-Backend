@@ -1,0 +1,18 @@
+1. Instalar o Oracle
+2. Instalar o DBeaver (https://sourceforge.net/projects/dbeaver.mirror/postdownload)
+3. Criar o schema
+4. Criar a permissão do usuário
+5. Habilitar a extensão do oracle do PHP
+6. Instalar Laravel
+7. Instalar lib de Oracle no Laravel(https://yajrabox.com/docs/laravel-oci8/9.0)
+8. Configurar Laravel
+
+
+Comando de ver tabelas
+SELECT * 
+  FROM DBA_OBJECTS
+ WHERE OBJECT_TYPE = 'TABLE'
+   AND OWNER = 'LOJA';
+   
+Permissão para o usuário no banco
+GRANT ALL PRIVILEGES TO LOJA;
