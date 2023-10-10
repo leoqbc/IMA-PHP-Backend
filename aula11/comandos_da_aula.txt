@@ -1,0 +1,16 @@
+-- executa a migração inicial do Laravel
+-- criar as tabelas para login (users)
+-- verificamos também se a conexão com o banco não deu erro
+php artisan migrate
+
+-- comando volta a ultima migrão
+php artisan migrate:rollback
+
+-- Cria o model em seguida criar o arquivo de migração (create table)
+php artisan make:model Product -m
+
+-- Para criar uma migração solta
+php artisan make:migration AddColumnProfileToProductsTable
+
+-- Cria o model e a migração para criar a tabela
+php artisan make:model Fornecedor -m
