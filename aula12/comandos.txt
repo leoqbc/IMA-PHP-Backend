@@ -1,0 +1,36 @@
+Classes Models
+app/Models
+
+Live code na linha de comando
+php artisan tinker
+
+// Criando um produto usando o model Product
+$instanciaProduto = new App\Models\Product();
+$instanciaProduto->name = 'Camisa Polo';
+$instanciaProduto->description = 'Camisa da marca Polo, super barata.';
+$instanciaProduto->category = 'Roupas';
+$instanciaProduto->price = 349.99;
+$instanciaProduto->profile = '/profiles/produto2.png';
+$instanciaProduto->save();
+
+1. Criar o Model + Tabela (php artisan make:model NomeModel -m)
+2. Abrir o arquivo de migração e configurar as colunas
+3. Configurar o arquivo model(se necessário)
+4. Só sair usando o model
+
+Para usar o model
+Criando um novo registro
+1. O model insert via new NomeModel()
+2. Preencher os campo/colunas
+3. Executar o método 'save'
+
+Capturando um registro do banco pelo ID
+1. App\Models\NomeModel::find(2)
+
+Capturar TODOS os registros do model
+1. App\Models\NomeModel::all()
+
+Atualizar registros de um tabela
+1. capturar o model ( $model = App\Models\NomeModel::find(1) )
+2. alterar o model ($model->campo = 'Alterador')
+3. salvar ($model->save())
