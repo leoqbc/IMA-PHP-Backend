@@ -1,0 +1,2 @@
+// comando para fazer um link na pasta public para a storage app/public
+php artisan storage:link
