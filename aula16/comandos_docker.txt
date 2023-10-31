@@ -1,0 +1,43 @@
+// ver as imagens baixadas
+docker images
+
+// roda um servidor web
+// e segura a execução
+docker run nginx
+
+// roda o servidor liberando a porta 80
+// e não segura a execução
+docker run -d -p 80:80 nginx
+
+// Igual o anterior mas nomeando o container
+docker run -d --name meu_servidor -p 80:80 nginx
+
+// Rodar o Mysql em conteiner
+docker run -d -e MYSQL_ROOT_PASSWORD=123456 --name meu_banco -p 3306:3306 mysql:8.0.23
+
+// Ver os contêiners de ligador
+docker ps
+
+// ver todos os conteinêrs
+docker ps -a
+
+// desligar um conteiner
+docker stop nome_container
+
+// ligar um conteiner
+docker start nome_container
+
+// excluir um conteiner
+docker rm nome_container
+
+// cria os containers do arquivo
+// docker-compose.yml e segura a execução
+docker composer up
+
+// cria os containers do arquivo
+// docker-compose.yml e libera a execução
+docker composer up -d
+
+// Mostra os conteiners ligados daquela pasta
+// contendo o docker-compose.yml
+docker compose ps
