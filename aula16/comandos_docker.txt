@@ -1,3 +1,5 @@
+Documentação do Docker: https://docs.docker.com/engine/reference/commandline/run/
+
 // ver as imagens baixadas
 docker images
 
