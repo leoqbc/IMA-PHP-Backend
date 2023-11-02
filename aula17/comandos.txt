@@ -1,0 +1,2 @@
+// entra dentro do conteiner
+docker compose exec web bash

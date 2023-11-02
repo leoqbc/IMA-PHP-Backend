@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  web:
+    build: ./docker
+    ports:
+      - 80:80
+    environment:
+      - WEB_DOCUMENT_ROOT=/app/public
+    volumes:
+      - .:/app
+  oracle:
+    image: gvenzl/oracle-xe:slim
+    ports:
+      - 1522:1521
+    environment:
+      - ORACLE_PASSWORD=123456
+      - APP_USER=LOJA
+      - APP_USER_PASSWORD=123456
