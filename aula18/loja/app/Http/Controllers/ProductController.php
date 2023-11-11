@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
@@ -42,11 +43,16 @@ class ProductController extends Controller
         $busca = $request->input('search');
         $order = $request->input('order');
 
+        // Uma busca em cache
+        // if (Cache::has('search', $search)) {
+        //     return Cache::get('search');
+        // }
+
         if ($busca) {
             $products = Product::where('name', 'like', "%$busca%")
                                ->orWhere('description', 'like', "%$busca%")
                                ->orWhere('category', 'like', "%$busca%")
-                               ->orWhere('price', 'like', "%$busca%")                       
+                               ->orWhere('price', 'like', "%$busca%")                              
                                ;
         } else {
             // faz o mesmo que Product::all() -> porém não traz ainda os resultados
@@ -61,6 +67,20 @@ class ProductController extends Controller
             [$campo, $ordenacao] = explode(':', $order);
             $products->orderBy($campo, $ordenacao);
         }
+
+        // Um exemplo de cache aqui!
+        // if (Cache::has('products')) {
+        //     $productsDb = Cache::get('products');
+        // } else {
+        //     // segura o código 5 segundos
+        //     // simulamos uma lentidão no banco
+        //     sleep(5);
+        //     $productsDb = $products->get();
+        //     Cache::put('products', $productsDb, 120);
+        // }
+        
+        // return do cache
+        // return response()->json($productsDb);
 
         return response()->json($products->get());
     }
@@ -82,7 +102,14 @@ class ProductController extends Controller
 
     public function delete(int $id)
     {
-        // faz a exclusão do produto
+        $produto = Product::findOrFail($id);
+        if ($produto->delete()) {
+            return response()->json([
+                'id' => $produto->id,
+                'mensagem' => 'Produto excluido com sucesso'
+            ], 202);
+        }
+        return response('Erro ao excluir', 400);
     }
 
     public function uploadProfile(Request $request)
